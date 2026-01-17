@@ -18,7 +18,11 @@
     position: relative;
 
     @media (max-width: 768px) {
-      padding: 1rem;
+      padding: 1rem 1rem; // Better mobile padding
+    }
+    
+    @media (max-width: 480px) {
+      padding: 0.75rem 0.75rem; // Even tighter for small screens
     }
   }
 
@@ -40,12 +44,17 @@
         @media (max-width: 768px) {
           font-size: 1.2rem;
         }
+        
+        @media (max-width: 480px) {
+          font-size: 1.1rem;
+        }
       }
     }
 
     @media (max-width: 768px) {
-      margin-left: -1.5rem;
-      margin-right: 1rem;
+      margin-left: 0; // Remove negative margin on mobile
+      margin-right: auto; // Push nav-actions to the right
+      flex: 1; // Take remaining space
     }
   }
 
@@ -58,8 +67,15 @@
 
     @media (max-width: 768px) {
       order: 2;
-      padding-left: 1rem;
-      gap: 1rem;
+      padding-left: 0.5rem; // Reduce padding on mobile
+      gap: 0.75rem;
+      margin-left: 0; // Remove auto margin on mobile
+      flex-shrink: 0; // Prevent shrinking
+    }
+    
+    @media (max-width: 480px) {
+      gap: 0.5rem;
+      padding-left: 0.25rem;
     }
   }
 
@@ -90,6 +106,22 @@
     &.btn-menu {
       background: none;
       padding: 0.5rem;
+      min-width: 40px; // Ensure minimum touch target
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      
+      &:hover {
+        background: rgba(44, 90, 160, 0.1);
+      }
+      
+      @media (max-width: 480px) {
+        min-width: 36px;
+        min-height: 36px;
+        padding: 0.4rem;
+      }
     }
   }
 
@@ -100,21 +132,31 @@
   .hamburger {
     display: flex;
     flex-direction: column;
-    width: 20px;
-    height: 16px;
+    width: 22px; // Slightly larger for better visibility
+    height: 18px;
     position: relative;
 
     span {
       display: block;
-      height: 2px;
+      height: 2.5px; // Slightly thicker lines
       width: 100%;
       background: #333;
       margin-bottom: 3px;
       transition: 0.3s;
       transform-origin: center;
+      border-radius: 1px; // Add slight rounding
 
       &:last-child {
         margin-bottom: 0;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      width: 20px;
+      height: 16px;
+      
+      span {
+        height: 2px;
       }
     }
   }
