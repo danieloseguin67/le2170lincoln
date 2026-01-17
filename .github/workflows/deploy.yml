@@ -15,8 +15,11 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -33,6 +36,12 @@ jobs:
       - name: Build Angular application
         run: npm run build -- --configuration=production --base-href=/le2170lincoln/
 
+      - name: List build output (debug)
+        run: ls -la ./dist/le2170lincoln-website
+
+      - name: Copy 404.html to handle routing
+        run: cp ./dist/le2170lincoln-website/404.html ./dist/le2170lincoln-website/404.html || echo "404.html already exists"
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
@@ -41,13 +50,6 @@ jobs:
         with:
           path: './dist/le2170lincoln-website'
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
