@@ -1,0 +1,72 @@
+<header class="header">
+  <nav class="navbar">
+    <div class="nav-brand">
+      <a routerLink="/" class="brand-link">
+        <h1>{{ (content$ | async)?.buildingName || 'Le2170Lincoln' }}</h1>
+      </a>
+    </div>
+    
+    <div class="nav-actions">
+      <!-- Book Tour Button -->
+      <button class="btn btn-tour" (click)="openBookingForm()">
+        {{ (content$ | async)?.buttons?.bookTour || 'Book a Tour' }}
+      </button>
+      
+      <!-- Language Switcher - moved to the right -->
+      <app-language-switcher></app-language-switcher>
+      
+      <!-- Menu Button - now visible on all devices -->
+      <button class="btn btn-menu" (click)="toggleMobileMenu()" 
+              [class.active]="isMobileMenuOpen">
+        <span class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+    
+    <!-- Navigation Links - now always in dropdown -->
+    <div class="nav-links" [class.mobile-open]="isMobileMenuOpen">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+         (click)="closeMobileMenu()">
+        {{ (content$ | async)?.nav?.home || 'Home' }}
+      </a>
+      <a routerLink="/apartments" routerLinkActive="active" 
+         (click)="closeMobileMenu()">
+        {{ (content$ | async)?.nav?.apartments || 'Apartments' }}
+      </a>
+      <a routerLink="/amenities" routerLinkActive="active"
+         (click)="closeMobileMenu()">
+        {{ (content$ | async)?.nav?.amenities || 'Amenities' }}
+      </a>
+      <a routerLink="/lifestyle" routerLinkActive="active"
+         (click)="closeMobileMenu()">
+        {{ (content$ | async)?.nav?.lifestyle || 'Lifestyle' }}
+      </a>
+      <a routerLink="/students" routerLinkActive="active"
+         (click)="closeMobileMenu()">
+        {{ (content$ | async)?.nav?.students || 'Students' }}
+      </a>
+      <a routerLink="/furnished-suites" routerLinkActive="active"
+         (click)="closeMobileMenu()">
+        {{ (content$ | async)?.nav?.furnished || 'Furnished Suites' }}
+      </a>
+      <a routerLink="/unfurnished-suites" routerLinkActive="active"
+         (click)="closeMobileMenu()">
+        {{ (content$ | async)?.nav?.unfurnished || 'Unfurnished Suites' }}
+      </a>
+      <a routerLink="/gallery" routerLinkActive="active"
+         (click)="closeMobileMenu()">
+        {{ (content$ | async)?.nav?.gallery || 'Gallery' }}
+      </a>
+      <a routerLink="/contact" routerLinkActive="active"
+         (click)="closeMobileMenu()">
+        {{ (content$ | async)?.nav?.contact || 'Contact' }}
+      </a>
+    </div>
+  </nav>
+  
+  <!-- Horizontal Bar -->
+  <div class="nav-divider"></div>
+</header>

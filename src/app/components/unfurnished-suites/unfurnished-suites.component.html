@@ -1,0 +1,9 @@
+<div class="page-container">
+  <div class="container">
+    <h1>{{ (content$ | async)?.nav?.unfurnished || 'Unfurnished Suites' }}</h1>
+    <p>Unfurnished apartments for those who prefer their own furnishing.</p>
+    <button class="btn btn-primary" (click)="bookTour()">
+      {{ (content$ | async)?.buttons?.bookTour || 'Book a Tour' }}
+    </button>
+  </div>
+</div>

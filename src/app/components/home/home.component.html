@@ -1,0 +1,86 @@
+<div class="home-container">
+  <!-- Hero Section with Montreal Background -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <img src="https://images.unsplash.com/photo-1517935706615-2717063c2225?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2066&q=80" 
+           alt="Montreal Place Ville Marie" class="hero-image">
+      <div class="hero-overlay"></div>
+    </div>
+    
+    <div class="hero-content">
+      <h1 class="hero-title">{{ (content$ | async)?.home?.hero?.title || 'LE 2170 LINCOLN' }}</h1>
+      <p class="hero-subtitle">{{ (content$ | async)?.home?.hero?.subtitle || 'Premium Living in Montreal' }}</p>
+      <button class="btn btn-primary" (click)="exploreApartments()">
+        {{ (content$ | async)?.buttons?.exploreApartments || 'Explore Apartments' }}
+      </button>
+    </div>
+  </section>
+
+  <!-- Welcome Section -->
+  <section class="welcome-section">
+    <div class="container">
+      <div class="welcome-content">
+        <h2>{{ (content$ | async)?.home?.welcome?.title || 'Welcome to LE 2170 Lincoln' }}</h2>
+        <p>{{ (content$ | async)?.home?.welcome?.subtitle || 'Discover modern living in the heart of Montreal' }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights Section -->
+  <section class="highlights-section">
+    <div class="container">
+      <!-- Featured Apartment -->
+      <div class="highlight-card">
+        <div class="highlight-image">
+          <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+               alt="Featured Apartment">
+        </div>
+        <div class="highlight-content">
+          <h3>{{ (content$ | async)?.home?.highlights?.apartment?.title || 'Featured Apartment' }}</h3>
+          <p>{{ (content$ | async)?.home?.highlights?.apartment?.description || 'Experience luxury living in our modern apartments with stunning city views' }}</p>
+        </div>
+      </div>
+
+      <!-- Premium Amenities -->
+      <div class="highlight-card">
+        <div class="highlight-image">
+          <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2075&q=80" 
+               alt="Premium Amenities">
+        </div>
+        <div class="highlight-content">
+          <h3>{{ (content$ | async)?.home?.highlights?.amenities?.title || 'Premium Amenities' }}</h3>
+          <p>{{ (content$ | async)?.home?.highlights?.amenities?.description || 'Enjoy world-class amenities including fitness center, rooftop terrace, and concierge services' }}</p>
+        </div>
+      </div>
+
+      <!-- Montreal Lifestyle -->
+      <div class="highlight-card">
+        <div class="highlight-image">
+          <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" 
+               alt="Montreal Lifestyle">
+        </div>
+        <div class="highlight-content">
+          <h3>{{ (content$ | async)?.home?.highlights?.lifestyle?.title || 'Montreal Lifestyle' }}</h3>
+          <p>{{ (content$ | async)?.home?.highlights?.lifestyle?.description || 'Live in the heart of Montreal with easy access to dining, shopping, and cultural attractions' }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="cta-section">
+    <div class="cta-background">
+      <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+           alt="Book a Tour">
+      <div class="cta-overlay"></div>
+    </div>
+    
+    <div class="cta-content">
+      <h2>Ready to Make LE 2170 Lincoln Your Home?</h2>
+      <p>Schedule a personal tour and discover your perfect apartment in Montreal.</p>
+      <button class="btn btn-secondary" (click)="bookTour()">
+        {{ (content$ | async)?.buttons?.bookTour || 'Book a Tour' }}
+      </button>
+    </div>
+  </section>
+</div>

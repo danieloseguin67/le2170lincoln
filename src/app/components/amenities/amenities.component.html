@@ -1,0 +1,9 @@
+<div class="page-container">
+  <div class="container">
+    <h1>{{ (content$ | async)?.nav?.amenities || 'Amenities' }}</h1>
+    <p>World-class amenities await you at LE 2170 Lincoln.</p>
+    <button class="btn btn-primary" (click)="bookTour()">
+      {{ (content$ | async)?.buttons?.bookTour || 'Book a Tour' }}
+    </button>
+  </div>
+</div>

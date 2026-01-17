@@ -1,0 +1,237 @@
+<div class="apartment-detail-container" *ngIf="apartment">
+  <!-- Header Section -->
+  <div class="detail-header">
+    <div class="container">
+      <div class="header-navigation">
+        <button class="btn-back" (click)="goBack()">
+          <span class="back-icon">←</span>
+          Back to Apartments
+        </button>
+      </div>
+      <div class="header-content">
+        <div class="property-title">
+          <h1>{{ apartment.title }}</h1>
+          <p class="property-address">2170 Lincoln Avenue, Montreal, QC H3H 2N5</p>
+        </div>
+        <div class="price-info">
+          <div class="main-price">{{ getFormattedPrice() }}/month</div>
+          <div class="price-details">All utilities included</div>
+        </div>
+      </div>
+      <div class="apartment-basics">
+        <div class="basic-info">
+          <div class="info-item">
+            <span class="label">Type:</span>
+            <span class="value">{{ getBedroomText() }} Apartment</span>
+          </div>
+          <div class="info-item">
+            <span class="label">Bathrooms:</span>
+            <span class="value">{{ apartment.bathrooms }}</span>
+          </div>
+          <div class="info-item">
+            <span class="label">Area:</span>
+            <span class="value">{{ apartment.sqft }} sq ft</span>
+          </div>
+          <div class="info-item">
+            <span class="label">Building:</span>
+            <span class="value">Le2170Lincoln</span>
+          </div>
+          <div class="info-item">
+            <span class="label">Year Built:</span>
+            <span class="value">2024 (New Construction)</span>
+          </div>
+          <div class="info-item">
+            <span class="label">Availability:</span>
+            <span class="value available">Available Now</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="detail-content">
+    <div class="container">
+      <div class="content-grid">
+        <!-- Image Gallery -->
+        <div class="image-gallery">
+          <div class="main-image">
+            <img [src]="apartment.images[currentImageIndex]" [alt]="apartment.title + ' - Image ' + (currentImageIndex + 1)">
+            <div class="image-navigation">
+              <button class="nav-btn prev" (click)="previousImage()" *ngIf="apartment.images.length > 1">
+                <span>‹</span>
+              </button>
+              <button class="nav-btn next" (click)="nextImage()" *ngIf="apartment.images.length > 1">
+                <span>›</span>
+              </button>
+            </div>
+            <div class="image-counter" *ngIf="apartment.images.length > 1">
+              {{ currentImageIndex + 1 }} / {{ apartment.images.length }}
+            </div>
+          </div>
+          <div class="image-thumbnails" *ngIf="apartment.images.length > 1">
+            <div class="thumbnail" 
+                 *ngFor="let image of apartment.images; let i = index"
+                 [class.active]="i === currentImageIndex"
+                 (click)="selectImage(i)">
+              <img [src]="image" [alt]="apartment.title + ' - Thumbnail ' + (i + 1)">
+            </div>
+          </div>
+        </div>
+
+        <!-- Apartment Information -->
+        <div class="apartment-info">
+          <!-- Property Summary -->
+          <div class="info-section property-summary">
+            <h2>Property Summary</h2>
+            <div class="summary-grid">
+              <div class="summary-item">
+                <span class="icon">🏢</span>
+                <div class="details">
+                  <span class="label">Building Type</span>
+                  <span class="value">Luxury Residential</span>
+                </div>
+              </div>
+              <div class="summary-item">
+                <span class="icon">🏠</span>
+                <div class="details">
+                  <span class="label">Unit Type</span>
+                  <span class="value">{{ getBedroomText() }}</span>
+                </div>
+              </div>
+              <div class="summary-item">
+                <span class="icon">📐</span>
+                <div class="details">
+                  <span class="label">Living Area</span>
+                  <span class="value">{{ apartment.sqft }} sq ft</span>
+                </div>
+              </div>
+              <div class="summary-item">
+                <span class="icon">🗓️</span>
+                <div class="details">
+                  <span class="label">Available</span>
+                  <span class="value">Immediate</span>
+                </div>
+              </div>
+              <div class="summary-item">
+                <span class="icon">🔑</span>
+                <div class="details">
+                  <span class="label">Lease Type</span>
+                  <span class="value">12+ months</span>
+                </div>
+              </div>
+              <div class="summary-item">
+                <span class="icon">🐕</span>
+                <div class="details">
+                  <span class="label">Pet Policy</span>
+                  <span class="value">Pet Friendly</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="info-section">
+            <h2>Description</h2>
+            <p class="description">{{ apartment.description }}</p>
+          </div>
+
+          <!-- Special Message -->
+          <div class="info-section special-message" *ngIf="apartment.specialMessage">
+            <div class="special-content">
+              <h3>🎉 Special Offer</h3>
+              <p>{{ apartment.specialMessage }}</p>
+            </div>
+          </div>
+
+          <!-- Action Button -->
+          <div class="info-section">
+            <button class="btn btn-primary btn-large" (click)="bookTour()">
+              {{ (content$ | async)?.buttons?.bookTour || 'Book a Tour' }}
+            </button>
+            <p class="contact-info">📞 Call us at (438) 508-1566 or email le2170lincoln&#64;gmail.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features and Amenities -->
+      <div class="features-amenities-section">
+        <div class="features-grid">
+          <!-- Features -->
+          <div class="features-card" *ngIf="apartment.features && apartment.features.length > 0">
+            <h2>🏠 Apartment Features</h2>
+            <ul class="features-list">
+              <li *ngFor="let feature of apartment.features">{{ feature }}</li>
+            </ul>
+          </div>
+
+          <!-- Amenities -->
+          <div class="amenities-card" *ngIf="apartment.amenities && apartment.amenities.length > 0">
+            <h2>🏢 Building Amenities</h2>
+            <ul class="amenities-list">
+              <li *ngFor="let amenity of apartment.amenities">{{ amenity }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Room Details -->
+      <div class="room-details" *ngIf="apartment.rooms && getRoomKeys().length > 0">
+        <h2>🛏️ Room by Room</h2>
+        <div class="rooms-grid">
+          <div class="room-card" *ngFor="let roomKey of getRoomKeys()">
+            <h3>{{ apartment.rooms[roomKey].name }}</h3>
+            <p class="room-description">{{ apartment.rooms[roomKey].description }}</p>
+            <div class="room-features" *ngIf="apartment.rooms[roomKey].features && apartment.rooms[roomKey].features.length > 0">
+              <h4>Features:</h4>
+              <ul>
+                <li *ngFor="let feature of apartment.rooms[roomKey].features">{{ feature }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floor Plan -->
+      <div class="floor-plan" *ngIf="apartment.floorPlan">
+        <h2>📋 Floor Plan</h2>
+        <div class="floor-plan-image">
+          <img [src]="apartment.floorPlan" [alt]="apartment.title + ' Floor Plan'">
+        </div>
+      </div>
+
+      <!-- Location Information -->
+      <div class="location-section">
+        <h2>📍 Location & Neighborhood</h2>
+        <div class="location-content">
+          <div class="address-info">
+            <h3>Address</h3>
+            <p>2170 Lincoln Avenue<br>Montreal, QC H3H 2N5</p>
+            <p><strong>Neighborhood:</strong> Notre-Dame-de-Grâce (NDG)</p>
+          </div>
+          <div class="location-highlights">
+            <h3>Nearby Attractions</h3>
+            <ul>
+              <li>🚇 Vendôme Metro Station - 8 min walk</li>
+              <li>🏥 Montreal General Hospital - 5 min drive</li>
+              <li>🎓 Concordia University - 15 min metro</li>
+              <li>🛍️ Monkland Village - 10 min walk</li>
+              <li>🌳 NDG Park - 5 min walk</li>
+              <li>☕ Cafés and restaurants on Monkland Ave</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Loading State -->
+<div class="loading-container" *ngIf="!apartment">
+  <div class="container">
+    <div class="loading-content">
+      <h2>Loading apartment details...</h2>
+      <p>Please wait while we fetch the information for this property.</p>
+    </div>
+  </div>
+</div>

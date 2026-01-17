@@ -1,0 +1,39 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>LE 2170 LINCOLN</h3>
+      <p>{{ (content$ | async)?.footer?.address }}</p>
+    </div>
+    
+    <div class="footer-section">
+      <h4>Contact Information</h4>
+      <p>
+        <strong>Phone:</strong> 
+        <a href="tel:{{ (content$ | async)?.footer?.phone }}">{{ (content$ | async)?.footer?.phone }}</a>
+      </p>
+      <p>
+        <strong>Email:</strong> 
+        <a href="mailto:{{ (content$ | async)?.footer?.email }}">{{ (content$ | async)?.footer?.email }}</a>
+      </p>
+    </div>
+    
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <div class="social-links">
+        <a href="#" class="social-link">
+          <span>{{ (content$ | async)?.footer?.social?.facebook }}</span>
+        </a>
+        <a href="#" class="social-link">
+          <span>{{ (content$ | async)?.footer?.social?.instagram }}</span>
+        </a>
+        <a href="#" class="social-link">
+          <span>{{ (content$ | async)?.footer?.social?.twitter }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; {{ currentYear }} LE 2170 Lincoln. All rights reserved.</p>
+  </div>
+</footer>

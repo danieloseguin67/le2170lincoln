@@ -1,0 +1,3 @@
+<button class="language-switcher" (click)="toggleLanguage()">
+  {{ (content$ | async)?.buttons?.language || (getCurrentLanguage() === 'en' ? 'Français' : 'English') }}
+</button>

@@ -1,0 +1,14 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .main-content {
+    flex: 1;
+    margin-top: 80px; // Account for fixed header height
+    
+    @media (max-width: 768px) {
+      margin-top: 70px;
+    }
+  }
+}

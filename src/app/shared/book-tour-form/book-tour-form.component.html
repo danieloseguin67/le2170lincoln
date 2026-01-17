@@ -1,0 +1,116 @@
+<div class="booking-overlay" *ngIf="isVisible$ | async" (click)="onOverlayClick($event)">
+  <div class="booking-form-container" (click)="$event.stopPropagation()">
+    <div class="form-header">
+      <h2>{{ (content$ | async)?.bookTourForm?.title || 'Book Your Tour' }}</h2>
+      <button class="close-btn" (click)="closeForm()" aria-label="Close form">&times;</button>
+    </div>
+    
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="booking-form">
+      <div class="form-group">
+        <label for="name">{{ (content$ | async)?.bookTourForm?.fields?.name || 'Full Name' }}</label>
+        <input
+          type="text"
+          id="name"
+          formControlName="name"
+          [placeholder]="(content$ | async)?.bookTourForm?.placeholders?.name || 'Enter your full name'"
+          [class.error]="isFieldInvalid('name')"
+        >
+        <div class="error-message" *ngIf="isFieldInvalid('name')">
+          Full name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">{{ (content$ | async)?.bookTourForm?.fields?.email || 'Email Address' }}</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          [placeholder]="(content$ | async)?.bookTourForm?.placeholders?.email || 'Enter your email address'"
+          [class.error]="isFieldInvalid('email')"
+        >
+        <div class="error-message" *ngIf="isFieldInvalid('email')">
+          <span *ngIf="bookingForm.get('email')?.errors?.['required']">Email is required</span>
+          <span *ngIf="bookingForm.get('email')?.errors?.['email']">Please enter a valid email</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">{{ (content$ | async)?.bookTourForm?.fields?.phone || 'Phone Number' }}</label>
+        <input
+          type="tel"
+          id="phone"
+          formControlName="phone"
+          [placeholder]="(content$ | async)?.bookTourForm?.placeholders?.phone || 'Enter your phone number'"
+          [class.error]="isFieldInvalid('phone')"
+        >
+        <div class="error-message" *ngIf="isFieldInvalid('phone')">
+          Phone number is required
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="date">{{ (content$ | async)?.bookTourForm?.fields?.date || 'Preferred Date' }}</label>
+          <input
+            type="date"
+            id="date"
+            formControlName="date"
+            [class.error]="isFieldInvalid('date')"
+            [min]="minDate"
+          >
+          <div class="error-message" *ngIf="isFieldInvalid('date')">
+            Please select a preferred date
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="time">{{ (content$ | async)?.bookTourForm?.fields?.time || 'Preferred Time' }}</label>
+          <select
+            id="time"
+            formControlName="time"
+            [class.error]="isFieldInvalid('time')"
+          >
+            <option value="">Select time</option>
+            <option value="09:00">9:00 AM</option>
+            <option value="10:00">10:00 AM</option>
+            <option value="11:00">11:00 AM</option>
+            <option value="14:00">2:00 PM</option>
+            <option value="15:00">3:00 PM</option>
+            <option value="16:00">4:00 PM</option>
+          </select>
+          <div class="error-message" *ngIf="isFieldInvalid('time')">
+            Please select a preferred time
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">{{ (content$ | async)?.bookTourForm?.fields?.message || 'Message (Optional)' }}</label>
+        <textarea
+          id="message"
+          formControlName="message"
+          rows="4"
+          [placeholder]="(content$ | async)?.bookTourForm?.placeholders?.message || 'Any specific requirements or questions?'"
+        ></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn btn-cancel" (click)="closeForm()">Cancel</button>
+        <button 
+          type="submit" 
+          class="btn btn-submit" 
+          [disabled]="bookingForm.invalid || isSubmitting"
+        >
+          <span *ngIf="!isSubmitting">{{ (content$ | async)?.buttons?.submit || 'Submit' }}</span>
+          <span *ngIf="isSubmitting">Submitting...</span>
+        </button>
+      </div>
+    </form>
+    
+    <div class="success-message" *ngIf="showSuccessMessage">
+      <h3>Thank you!</h3>
+      <p>Your tour booking request has been submitted successfully. We'll contact you soon to confirm your appointment.</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,564 @@
+{
+  "en": {
+    "buildingName": "Le2170Lincoln",
+    "nav": {
+      "home": "Home",
+      "apartments": "Apartments",
+      "amenities": "Amenities",
+      "lifestyle": "Lifestyle",
+      "students": "Students",
+      "furnished": "Furnished Suites",
+      "unfurnished": "Unfurnished Suites",
+      "gallery": "Gallery",
+      "contact": "Contact"
+    },
+    "buttons": {
+      "exploreApartments": "Explore Apartments",
+      "bookTour": "Book a Tour",
+      "submit": "Submit",
+      "language": "Français"
+    },
+    "apartments": {
+      "details": [
+        {
+          "id": 1,
+          "title": "Studio Deluxe",
+          "bedrooms": 0,
+          "bathrooms": 1,
+          "sqft": 450,
+          "price": 1800,
+          "images": [
+            "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1586105251261-72a756497a11?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1565182999561-18d7dc61c393?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          ],
+          "description": "Experience sophisticated studio living with our deluxe studio apartment. This thoughtfully designed space maximizes every square foot to create a comfortable and stylish home perfect for professionals and students alike.",
+          "specialMessage": "Move in now and get your first month at 50% off! Limited time offer for qualified applicants.",
+          "features": [
+            "Floor-to-ceiling windows",
+            "Hardwood flooring",
+            "In-unit washer and dryer",
+            "Modern kitchen with stainless steel appliances",
+            "Built-in storage solutions",
+            "High-speed internet included",
+            "Climate control",
+            "24/7 concierge service"
+          ],
+          "amenities": [
+            "Fitness center access",
+            "Rooftop terrace",
+            "Package receiving service",
+            "Bike storage",
+            "Study rooms",
+            "Common lounge areas"
+          ],
+          "rooms": {
+            "main": {
+              "name": "Main Living Space",
+              "description": "Open-concept living area that combines sleeping, dining, and relaxation spaces with smart storage solutions.",
+              "features": [
+                "Murphy bed with premium mattress",
+                "Dining table for 2",
+                "Comfortable seating area",
+                "Large windows with city views",
+                "Built-in desk area"
+              ]
+            },
+            "kitchen": {
+              "name": "Gourmet Kitchen",
+              "description": "Compact yet fully equipped kitchen with high-end appliances and ample counter space.",
+              "features": [
+                "Stainless steel refrigerator",
+                "Induction cooktop",
+                "Convection microwave",
+                "Dishwasher",
+                "Quartz countertops",
+                "Soft-close cabinets"
+              ]
+            },
+            "bathroom": {
+              "name": "Spa-like Bathroom",
+              "description": "Modern bathroom with luxury finishes and efficient layout.",
+              "features": [
+                "Walk-in shower with rainfall showerhead",
+                "Floating vanity",
+                "LED mirror",
+                "Heated floors",
+                "Premium fixtures"
+              ]
+            }
+          },
+          "floorPlan": "https://images.unsplash.com/photo-1586105251261-72a756497a11?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+        },
+        {
+          "id": 2,
+          "title": "One Bedroom Premium",
+          "bedrooms": 1,
+          "bathrooms": 1,
+          "sqft": 650,
+          "price": 2200,
+          "images": [
+            "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1586105251261-72a756497a11?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1565182999561-18d7dc61c393?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          ],
+          "description": "Elegant one-bedroom apartment featuring separate living and sleeping areas. Perfect for those who desire privacy and comfort with premium finishes throughout.",
+          "specialMessage": "Enjoy 2 months free parking with a 12-month lease agreement!",
+          "features": [
+            "Separate bedroom with walk-in closet",
+            "Open-concept living and dining area",
+            "Premium hardwood floors",
+            "Floor-to-ceiling windows",
+            "In-unit laundry",
+            "Central air conditioning",
+            "Modern lighting fixtures",
+            "Smart home features"
+          ],
+          "amenities": [
+            "Fitness center and yoga studio",
+            "Rooftop garden and BBQ area",
+            "24-hour concierge",
+            "Package and dry cleaning service",
+            "Business center",
+            "Pet spa (pet-friendly)",
+            "Resident lounge with fireplace"
+          ],
+          "rooms": {
+            "bedroom": {
+              "name": "Master Bedroom",
+              "description": "Spacious bedroom with ample natural light and premium finishes.",
+              "features": [
+                "Queen-size bed accommodation",
+                "Walk-in closet with built-in organizers",
+                "Large windows with blackout blinds",
+                "Ceiling fan",
+                "USB outlets by bedside"
+              ]
+            },
+            "livingRoom": {
+              "name": "Living & Dining Area",
+              "description": "Open-concept space perfect for entertaining and relaxation.",
+              "features": [
+                "Spacious living area with sofa accommodation",
+                "Dining space for 4 people",
+                "Entertainment center built-in",
+                "Balcony access",
+                "Smart TV mounting ready"
+              ]
+            },
+            "kitchen": {
+              "name": "Chef's Kitchen",
+              "description": "Fully equipped modern kitchen with island and premium appliances.",
+              "features": [
+                "Kitchen island with breakfast bar",
+                "Stainless steel appliance package",
+                "Granite countertops",
+                "Subway tile backsplash",
+                "Pantry storage",
+                "Wine refrigerator"
+              ]
+            },
+            "bathroom": {
+              "name": "Full Bathroom",
+              "description": "Luxurious bathroom with modern fixtures and finishes.",
+              "features": [
+                "Soaking tub and separate shower",
+                "Double vanity",
+                "Marble countertops",
+                "LED lighting",
+                "Linen closet"
+              ]
+            }
+          },
+          "floorPlan": "https://images.unsplash.com/photo-1586105251261-72a756497a11?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+        },
+        {
+          "id": 3,
+          "title": "Two Bedroom Executive",
+          "bedrooms": 2,
+          "bathrooms": 2,
+          "sqft": 950,
+          "price": 2800,
+          "images": [
+            "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80",
+            "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1586105251261-72a756497a11?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1565182999561-18d7dc61c393?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          ],
+          "description": "Sophisticated two-bedroom executive suite perfect for professionals, roommates, or small families. Features premium finishes, two full bathrooms, and a spacious layout designed for modern living.",
+          "specialMessage": "Professional discount available: 10% off monthly rent for healthcare workers, teachers, and first responders!",
+          "features": [
+            "Two spacious bedrooms with walk-in closets",
+            "Two full bathrooms (master en-suite)",
+            "Large living and dining areas",
+            "Gourmet kitchen with island",
+            "Private balcony with city views",
+            "In-unit washer/dryer",
+            "Smart home automation",
+            "Upgraded flooring throughout",
+            "Ample storage space"
+          ],
+          "amenities": [
+            "Executive lounge access",
+            "Full-service fitness center",
+            "Rooftop pool and sun deck",
+            "24-hour concierge and security",
+            "Business center with meeting rooms",
+            "Package and grocery receiving",
+            "Pet grooming station",
+            "Resident events and social activities"
+          ],
+          "rooms": {
+            "masterBedroom": {
+              "name": "Master Bedroom Suite",
+              "description": "Luxurious master bedroom with en-suite bathroom and walk-in closet.",
+              "features": [
+                "King-size bed accommodation",
+                "Walk-in closet with custom shelving",
+                "En-suite bathroom with double vanity",
+                "Private balcony access",
+                "Ceiling fan and smart lighting",
+                "Built-in nightstands with USB charging"
+              ]
+            },
+            "secondBedroom": {
+              "name": "Second Bedroom",
+              "description": "Versatile second bedroom perfect for guests, office, or roommate.",
+              "features": [
+                "Queen-size bed accommodation",
+                "Large closet with organizers",
+                "Natural light from oversized windows",
+                "Flexible layout for multiple uses",
+                "Direct hallway bathroom access"
+              ]
+            },
+            "livingRoom": {
+              "name": "Living & Dining Room",
+              "description": "Expansive open-concept living space ideal for entertaining.",
+              "features": [
+                "Spacious seating area for 6+ people",
+                "Formal dining space for 6",
+                "Built-in entertainment center",
+                "Floor-to-ceiling windows",
+                "Balcony access with outdoor seating",
+                "Electric fireplace feature"
+              ]
+            },
+            "kitchen": {
+              "name": "Gourmet Kitchen",
+              "description": "Professional-grade kitchen with premium appliances and finishes.",
+              "features": [
+                "Large kitchen island with seating for 3",
+                "Stainless steel appliance package",
+                "Quartz countertops with waterfall edge",
+                "Custom backsplash",
+                "Walk-in pantry",
+                "Wine storage and bar area",
+                "Under-cabinet lighting"
+              ]
+            },
+            "masterBathroom": {
+              "name": "Master Bathroom",
+              "description": "Spa-like en-suite with luxury fixtures and finishes.",
+              "features": [
+                "Double vanity with quartz countertops",
+                "Walk-in shower with multiple shower heads",
+                "Soaking tub",
+                "Heated floors",
+                "Private water closet",
+                "Custom lighting"
+              ]
+            },
+            "guestBathroom": {
+              "name": "Guest Bathroom",
+              "description": "Full bathroom with modern fixtures and convenient location.",
+              "features": [
+                "Single vanity with storage",
+                "Tub/shower combination",
+                "Modern fixtures and lighting",
+                "Linen storage closet"
+              ]
+            }
+          },
+          "floorPlan": "https://images.unsplash.com/photo-1586105251261-72a756497a11?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+        },
+        {
+          "id": 4,
+          "title": "Two Bedroom Penthouse",
+          "bedrooms": 2,
+          "bathrooms": 2,
+          "sqft": 1100,
+          "price": 3200,
+          "images": [
+            "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=2080&q=80",
+            "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80",
+            "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1586105251261-72a756497a11?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1565182999561-18d7dc61c393?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          ],
+          "description": "The crown jewel of Le2170Lincoln - our luxurious penthouse offering unparalleled views of Montreal's skyline. This exceptional home features premium finishes, expansive living spaces, and exclusive amenities for the most discerning residents.",
+          "specialMessage": "VIP treatment included: Complimentary weekly housekeeping service and priority building amenities access!",
+          "features": [
+            "Panoramic city and mountain views",
+            "Private rooftop terrace access",
+            "Premium hardwood flooring throughout",
+            "Floor-to-ceiling windows on multiple exposures",
+            "High-end appliance package",
+            "Smart home automation system",
+            "In-unit laundry room",
+            "Custom built-ins and storage",
+            "Private elevator access",
+            "Two parking spaces included"
+          ],
+          "amenities": [
+            "Private rooftop terrace with BBQ and seating",
+            "VIP concierge services",
+            "Priority fitness center access",
+            "Executive meeting room booking privileges",
+            "Complimentary weekly housekeeping",
+            "Premium cable and internet package",
+            "Wine storage locker",
+            "Exclusive resident events"
+          ],
+          "rooms": {
+            "masterSuite": {
+              "name": "Master Suite",
+              "description": "Exceptional master suite with sitting area, walk-in closet, and spa-like en-suite.",
+              "features": [
+                "King-size bed with city view",
+                "Sitting area with premium furnishing space",
+                "Walk-in closet with custom organization system",
+                "Private balcony access",
+                "Smart lighting and climate control",
+                "Built-in vanity area",
+                "Blackout and sheer window treatments"
+              ]
+            },
+            "guestSuite": {
+              "name": "Guest Suite",
+              "description": "Elegant guest bedroom with en-suite bathroom and flexible layout.",
+              "features": [
+                "Queen-size bed accommodation",
+                "Built-in desk and seating area",
+                "Walk-in closet",
+                "En-suite bathroom access",
+                "Mountain view windows",
+                "Can serve as home office or den"
+              ]
+            },
+            "greatRoom": {
+              "name": "Great Room",
+              "description": "Expansive living and dining space with soaring ceilings and dramatic views.",
+              "features": [
+                "Open-concept design with 12-foot ceilings",
+                "Living area with fireplace feature",
+                "Formal dining space for 8 people",
+                "Multiple seating areas",
+                "Access to private terrace",
+                "Built-in entertainment center",
+                "Custom lighting throughout"
+              ]
+            },
+            "kitchen": {
+              "name": "Gourmet Kitchen",
+              "description": "Chef's dream kitchen with professional appliances and custom cabinetry.",
+              "features": [
+                "Large center island with waterfall edge",
+                "Professional-grade appliance suite",
+                "Custom cabinetry to ceiling",
+                "Quartz countertops with decorative edge",
+                "Designer backsplash",
+                "Walk-in pantry with organization system",
+                "Wine refrigerator and bar area",
+                "Butler's pantry"
+              ]
+            },
+            "masterBathroom": {
+              "name": "Master Spa Bathroom",
+              "description": "Luxurious spa-like bathroom with premium fixtures and finishes.",
+              "features": [
+                "Freestanding soaking tub with city views",
+                "Glass-enclosed rainfall shower",
+                "Double vanity with quartz countertops",
+                "Heated floors throughout",
+                "Custom lighting and mirrors",
+                "Private water closet",
+                "Towel warming drawer"
+              ]
+            },
+            "guestBathroom": {
+              "name": "Guest Bathroom",
+              "description": "Elegant full bathroom with modern fixtures and thoughtful design.",
+              "features": [
+                "Single vanity with storage",
+                "Walk-in shower with glass enclosure",
+                "Designer fixtures and lighting",
+                "Large linen closet"
+              ]
+            },
+            "privateRooftop": {
+              "name": "Private Rooftop Terrace",
+              "description": "Exclusive outdoor living space with panoramic city views.",
+              "features": [
+                "360-degree city and mountain views",
+                "Built-in BBQ and outdoor kitchen",
+                "Multiple seating and dining areas",
+                "Weather-resistant outdoor furniture ready",
+                "Automatic irrigation for planters",
+                "Outdoor lighting and heating elements"
+              ]
+            }
+          },
+          "floorPlan": "https://images.unsplash.com/photo-1586105251261-72a756497a11?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+        }
+      ]
+    },
+    "buildingName": "Le2170Lincoln",
+    "nav": {
+      "home": "Home",
+      "apartments": "Apartments",
+      "amenities": "Amenities",
+      "lifestyle": "Lifestyle",
+      "students": "Students",
+      "furnished": "Furnished Suites",
+      "unfurnished": "Unfurnished Suites",
+      "gallery": "Gallery",
+      "contact": "Contact"
+    },
+    "buttons": {
+      "exploreApartments": "Explore Apartments",
+      "bookTour": "Book a Tour",
+      "submit": "Submit",
+      "language": "Français"
+    },
+    "home": {
+      "hero": {
+        "title": "LE 2170 LINCOLN",
+        "subtitle": "Premium Living in Montreal"
+      },
+      "welcome": {
+        "title": "Welcome to LE 2170 Lincoln",
+        "subtitle": "Discover modern living in the heart of Montreal"
+      },
+      "highlights": {
+        "apartment": {
+          "title": "Featured Apartment",
+          "description": "Experience luxury living in our modern apartments with stunning city views"
+        },
+        "amenities": {
+          "title": "Premium Amenities",
+          "description": "Enjoy world-class amenities including fitness center, rooftop terrace, and concierge services"
+        },
+        "lifestyle": {
+          "title": "Montreal Lifestyle",
+          "description": "Live in the heart of Montreal with easy access to dining, shopping, and cultural attractions"
+        }
+      }
+    },
+    "bookTourForm": {
+      "title": "Book Your Tour",
+      "fields": {
+        "name": "Full Name",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "date": "Preferred Date",
+        "time": "Preferred Time",
+        "message": "Message (Optional)"
+      },
+      "placeholders": {
+        "name": "Enter your full name",
+        "email": "Enter your email address",
+        "phone": "Enter your phone number",
+        "message": "Any specific requirements or questions?"
+      }
+    },
+    "footer": {
+      "address": "2170 Lincoln Avenue, Montreal, QC",
+      "phone": "438-508-1566",
+      "email": "le2170lincoln@gmail.com",
+      "social": {
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "twitter": "Twitter"
+      }
+    }
+  },
+  "fr": {
+    "buildingName": "Le2170Lincoln",
+    "nav": {
+      "home": "Accueil",
+      "apartments": "Appartements",
+      "amenities": "Commodités",
+      "lifestyle": "Style de vie",
+      "students": "Étudiants",
+      "furnished": "Suites meublées",
+      "unfurnished": "Suites non meublées",
+      "gallery": "Galerie",
+      "contact": "Contact"
+    },
+    "buttons": {
+      "exploreApartments": "Explorer les appartements",
+      "bookTour": "Réserver une visite",
+      "submit": "Soumettre",
+      "language": "English"
+    },
+    "home": {
+      "hero": {
+        "title": "LE 2170 LINCOLN",
+        "subtitle": "Vie de luxe à Montréal"
+      },
+      "welcome": {
+        "title": "Bienvenue au LE 2170 Lincoln",
+        "subtitle": "Découvrez la vie moderne au cœur de Montréal"
+      },
+      "highlights": {
+        "apartment": {
+          "title": "Appartement vedette",
+          "description": "Découvrez la vie de luxe dans nos appartements modernes avec vue imprenable sur la ville"
+        },
+        "amenities": {
+          "title": "Commodités de qualité",
+          "description": "Profitez de commodités de classe mondiale incluant centre de fitness, terrasse sur le toit et services de conciergerie"
+        },
+        "lifestyle": {
+          "title": "Style de vie montréalais",
+          "description": "Vivez au cœur de Montréal avec un accès facile aux restaurants, boutiques et attractions culturelles"
+        }
+      }
+    },
+    "bookTourForm": {
+      "title": "Réserver votre visite",
+      "fields": {
+        "name": "Nom complet",
+        "email": "Adresse e-mail",
+        "phone": "Numéro de téléphone",
+        "date": "Date préférée",
+        "time": "Heure préférée",
+        "message": "Message (Optionnel)"
+      },
+      "placeholders": {
+        "name": "Entrez votre nom complet",
+        "email": "Entrez votre adresse e-mail",
+        "phone": "Entrez votre numéro de téléphone",
+        "message": "Des exigences spécifiques ou des questions?"
+      }
+    },
+    "footer": {
+      "address": "2170 Avenue Lincoln, Montréal, QC",
+      "phone": "438-508-1566",
+      "email": "le2170lincoln@gmail.com",
+      "social": {
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "twitter": "Twitter"
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+<div class="apartments-container">
+  <div class="apartments-hero">
+    <div class="container">
+      <h1>{{ (content$ | async)?.nav?.apartments || 'Apartments' }}</h1>
+      <p>Find your perfect home at LE 2170 Lincoln</p>
+      
+      <!-- Search Bar -->
+      <div class="search-section">
+        <div class="search-bar">
+          <input type="text" placeholder="Search apartments..." class="search-input">
+          <button class="search-btn">Search</button>
+        </div>
+        <div class="search-divider"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="apartments-content">
+    <div class="container">
+      <!-- Apartment Listings Placeholder -->
+      <div class="apartments-grid">
+        <div class="apartment-card" *ngFor="let apt of apartments">
+          <div class="apartment-image">
+            <img [src]="apt.image" [alt]="apt.title">
+          </div>
+          <div class="apartment-info">
+            <h3>{{ apt.title }}</h3>
+            <p class="apartment-details">{{ apt.bedrooms === 0 ? 'Studio' : apt.bedrooms + ' bed' }} • {{ apt.bathrooms }} bath • {{ apt.sqft }} sq ft</p>
+            <p class="apartment-price">${{ apt.price }}/month</p>
+            <div class="button-group">
+              <button class="btn btn-secondary" (click)="viewDetails(apt.id)">
+                View Details
+              </button>
+              <button class="btn btn-primary" (click)="bookTour()">
+                {{ (content$ | async)?.buttons?.bookTour || 'Book a Tour' }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
