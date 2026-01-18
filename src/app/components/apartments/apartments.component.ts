@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ContentService } from '../../services/content.service';
@@ -17,12 +18,15 @@ interface Apartment {
 
 @Component({
   selector: 'app-apartments',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './apartments.component.html',
   styleUrl: './apartments.component.scss'
 })
 export class ApartmentsComponent implements OnInit {
   content$: Observable<any>;
+  searchQuery: string = '';
+  searchResults: Apartment[] = [];
+  showSearchModal: boolean = false;
   apartments: Apartment[] = [
     {
       id: 1,
@@ -79,5 +83,48 @@ export class ApartmentsComponent implements OnInit {
 
   bookTour(): void {
     this.tourBookingService.showBookingForm();
+  }
+
+  // Search functionality
+  onSearch(): void {
+    if (this.searchQuery.trim() === '') {
+      this.searchResults = [];
+      this.showSearchModal = false;
+      return;
+    }
+
+    const query = this.searchQuery.toLowerCase().trim();
+    this.searchResults = this.apartments.filter(apartment => 
+      apartment.title.toLowerCase().includes(query) ||
+      apartment.bedrooms.toString().includes(query) ||
+      apartment.bathrooms.toString().includes(query) ||
+      apartment.price.toString().includes(query) ||
+      apartment.sqft.toString().includes(query) ||
+      (apartment.bedrooms === 0 && query.includes('studio')) ||
+      (query.includes('bedroom') && apartment.bedrooms > 0) ||
+      (query.includes('bath') && apartment.bathrooms > 0)
+    );
+
+    this.showSearchModal = true;
+  }
+
+  // Select apartment from search results
+  selectApartment(apartmentId: number): void {
+    this.closeSearchModal();
+    this.viewDetails(apartmentId);
+  }
+
+  // Close search modal
+  closeSearchModal(): void {
+    this.showSearchModal = false;
+    this.searchQuery = '';
+    this.searchResults = [];
+  }
+
+  // Handle Enter key in search input
+  onSearchKeyPress(event: KeyboardEvent): void {
+    if (event.key === 'Enter') {
+      this.onSearch();
+    }
   }
 }

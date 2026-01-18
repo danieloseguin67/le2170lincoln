@@ -7,8 +7,13 @@
       <!-- Search Bar -->
       <div class="search-section">
         <div class="search-bar">
-          <input type="text" placeholder="Search apartments..." class="search-input">
-          <button class="search-btn">Search</button>
+          <input 
+            type="text" 
+            placeholder="Search by apartment type, bedrooms, price..." 
+            class="search-input"
+            [(ngModel)]="searchQuery"
+            (keypress)="onSearchKeyPress($event)">
+          <button class="search-btn" (click)="onSearch()">Search</button>
         </div>
         <div class="search-divider"></div>
       </div>
@@ -34,6 +39,47 @@
               <button class="btn btn-primary" (click)="bookTour()">
                 {{ (content$ | async)?.buttons?.bookTour || 'Book a Tour' }}
               </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Results Modal -->
+  <div class="search-modal-overlay" *ngIf="showSearchModal" (click)="closeSearchModal()">
+    <div class="search-modal" (click)="$event.stopPropagation()">
+      <div class="search-modal-header">
+        <h3>Search Results</h3>
+        <button class="close-btn" (click)="closeSearchModal()">
+          <span>×</span>
+        </button>
+      </div>
+      
+      <div class="search-modal-body">
+        <div *ngIf="searchResults.length === 0" class="no-results">
+          <p>No apartments found matching your search criteria.</p>
+        </div>
+        
+        <div class="search-results" *ngIf="searchResults.length > 0">
+          <div 
+            *ngFor="let apartment of searchResults" 
+            class="search-result-item" 
+            (click)="selectApartment(apartment.id)">
+            
+            <div class="result-image">
+              <img [src]="apartment.image" [alt]="apartment.title" />
+            </div>
+            
+            <div class="result-info">
+              <h4>{{ apartment.title }}</h4>
+              <p class="result-details">{{ apartment.bedrooms === 0 ? 'Studio' : apartment.bedrooms + ' bed' }} • {{ apartment.bathrooms }} bath</p>
+              <p class="result-price">${{ apartment.price }}/month</p>
+              <p class="result-size">{{ apartment.sqft }} sq ft</p>
+            </div>
+            
+            <div class="result-arrow">
+              <span>→</span>
             </div>
           </div>
         </div>
