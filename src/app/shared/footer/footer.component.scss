@@ -85,5 +85,23 @@
     @media (max-width: 768px) {
       padding: 1rem;
     }
+
+    .developer-credit {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: #999;
+      font-style: italic;
+      
+      a {
+        color: #4a90c2;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        
+        &:hover {
+          color: #2c5aa0;
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }
