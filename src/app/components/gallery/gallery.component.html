@@ -56,47 +56,4 @@
       </button>
     </div>
   </div>
-
-  <!-- Category Sections -->
-  <div class="gallery-categories">
-    <div class="container">
-      <div class="category-section" *ngFor="let category of categories">
-        <div class="category-header">
-          <h2>{{ category.title }}</h2>
-          <div class="category-description">
-            <p>{{ category.description }}</p>
-            <button class="btn btn-outline edit-description-btn">
-              <span>✏️</span> Edit Description
-            </button>
-          </div>
-        </div>
-        
-        <div class="category-images">
-          <div class="image-placeholder">
-            <div class="placeholder-container">
-              <img [src]="category.images.image1.src" [alt]="category.images.image1.alt">
-              <div class="placeholder-overlay" *ngIf="category.images.image1.placeholder">
-                <div class="placeholder-content">
-                  <span class="upload-icon">📷</span>
-                  <p>Click to upload<br>{{ category.title }} Image 1</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="image-placeholder">
-            <div class="placeholder-container">
-              <img [src]="category.images.image2.src" [alt]="category.images.image2.alt">
-              <div class="placeholder-overlay" *ngIf="category.images.image2.placeholder">
-                <div class="placeholder-content">
-                  <span class="upload-icon">📷</span>
-                  <p>Click to upload<br>{{ category.title }} Image 2</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>

@@ -71,7 +71,7 @@ export class AmenitiesComponent implements OnInit {
           title: 'Swimming Pool',
           description: 'Resort-style pool with lounge areas',
           icon: '🏊‍♂️',
-          image: 'https://images.unsplash.com/photo-1544989164-fb7b49cdef5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+          image: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
           features: ['Heated Pool', 'Pool Deck', 'Cabanas', 'Hot Tub']
         }
       ]

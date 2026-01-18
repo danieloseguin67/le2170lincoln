@@ -12,24 +12,6 @@ interface GalleryImage {
   description: string;
 }
 
-interface GalleryCategory {
-  id: string;
-  title: string;
-  description: string;
-  images: {
-    image1: {
-      src: string;
-      alt: string;
-      placeholder?: boolean;
-    };
-    image2: {
-      src: string;
-      alt: string;
-      placeholder?: boolean;
-    };
-  };
-}
-
 @Component({
   selector: 'app-gallery',
   imports: [CommonModule],
@@ -83,94 +65,6 @@ export class GalleryComponent implements OnInit, OnDestroy {
       alt: 'Building Amenities',
       title: 'Premium Amenities',
       description: 'World-class facilities and community spaces'
-    }
-  ];
-
-  categories: GalleryCategory[] = [
-    {
-      id: 'amenities',
-      title: 'Amenities',
-      description: 'Discover our world-class amenities designed to elevate your living experience. From fitness centers to rooftop terraces, every detail is crafted for your comfort and convenience.',
-      images: {
-        image1: {
-          src: 'https://via.placeholder.com/600x400/e9ecef/6c757d?text=Amenities+Image+1',
-          alt: 'Amenities Image 1',
-          placeholder: true
-        },
-        image2: {
-          src: 'https://via.placeholder.com/600x400/e9ecef/6c757d?text=Amenities+Image+2',
-          alt: 'Amenities Image 2',
-          placeholder: true
-        }
-      }
-    },
-    {
-      id: 'lifestyle',
-      title: 'Lifestyle',
-      description: 'Experience the vibrant lifestyle at LE 2170 Lincoln. Our community offers the perfect balance of urban sophistication and peaceful retreat, right in the heart of the city.',
-      images: {
-        image1: {
-          src: 'https://via.placeholder.com/600x400/e9ecef/6c757d?text=Lifestyle+Image+1',
-          alt: 'Lifestyle Image 1',
-          placeholder: true
-        },
-        image2: {
-          src: 'https://via.placeholder.com/600x400/e9ecef/6c757d?text=Lifestyle+Image+2',
-          alt: 'Lifestyle Image 2',
-          placeholder: true
-        }
-      }
-    },
-    {
-      id: 'students',
-      title: 'Students',
-      description: 'Designed with students in mind, our apartments offer the perfect environment for academic success. Close to universities with study spaces, high-speed internet, and a supportive community.',
-      images: {
-        image1: {
-          src: 'https://via.placeholder.com/600x400/e9ecef/6c757d?text=Student+Living+Image+1',
-          alt: 'Student Living Image 1',
-          placeholder: true
-        },
-        image2: {
-          src: 'https://via.placeholder.com/600x400/e9ecef/6c757d?text=Student+Living+Image+2',
-          alt: 'Student Living Image 2',
-          placeholder: true
-        }
-      }
-    },
-    {
-      id: 'furnished-suites',
-      title: 'Furnished Suites',
-      description: 'Move in ready! Our fully furnished suites come equipped with premium furniture, appliances, and everything you need for comfortable living from day one.',
-      images: {
-        image1: {
-          src: 'https://via.placeholder.com/600x400/e9ecef/6c757d?text=Furnished+Suite+1',
-          alt: 'Furnished Suite Image 1',
-          placeholder: true
-        },
-        image2: {
-          src: 'https://via.placeholder.com/600x400/e9ecef/6c757d?text=Furnished+Suite+2',
-          alt: 'Furnished Suite Image 2',
-          placeholder: true
-        }
-      }
-    },
-    {
-      id: 'unfurnished-suites',
-      title: 'Unfurnished Suites',
-      description: 'Create your own personalized space in our unfurnished suites. These blank canvases offer flexibility to design your perfect home with your own style and furniture.',
-      images: {
-        image1: {
-          src: 'https://via.placeholder.com/600x400/e9ecef/6c757d?text=Unfurnished+Suite+1',
-          alt: 'Unfurnished Suite Image 1',
-          placeholder: true
-        },
-        image2: {
-          src: 'https://via.placeholder.com/600x400/e9ecef/6c757d?text=Unfurnished+Suite+2',
-          alt: 'Unfurnished Suite Image 2',
-          placeholder: true
-        }
-      }
     }
   ];
 
