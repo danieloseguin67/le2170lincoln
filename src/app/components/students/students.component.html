@@ -1,9 +1,52 @@
-<div class="page-container">
-  <div class="container">
-    <h1>{{ (content$ | async)?.nav?.students || 'Students' }}</h1>
-    <p>Special offers and accommodations for students.</p>
-    <button class="btn btn-primary" (click)="bookTour()">
-      {{ (content$ | async)?.buttons?.bookTour || 'Book a Tour' }}
-    </button>
+<div class="students-container">
+  <div class="students-hero">
+    <div class="container">
+      <h1>{{ (content$ | async)?.nav?.students || 'Students' }}</h1>
+      <p>Designed for academic success. Experience student living that supports your educational journey at Montreal's top universities.</p>
+    </div>
+  </div>
+  
+  <!-- Student Categories -->
+  <div class="students-content">
+    <div class="container">
+      <div class="category-section" *ngFor="let category of studentCategories">
+        <div class="category-header">
+          <h2>{{ category.title }}</h2>
+          <p class="category-description">{{ category.description }}</p>
+        </div>
+        
+        <div class="students-grid">
+          <div class="student-card" *ngFor="let feature of category.features">
+            <div class="student-image">
+              <img [src]="feature.image" [alt]="feature.title">
+              <div class="student-icon">{{ feature.icon }}</div>
+            </div>
+            
+            <div class="student-content">
+              <h3>{{ feature.title }}</h3>
+              <p class="student-description">{{ feature.description }}</p>
+              
+              <div class="student-benefits">
+                <h4>Benefits:</h4>
+                <ul>
+                  <li *ngFor="let benefit of feature.benefits">{{ benefit }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to Action -->
+  <div class="students-cta">
+    <div class="container">
+      <h2>Ready to Start Your Academic Journey?</h2>
+      <p>Join our community of successful students and make the most of your university experience</p>
+      <button class="btn btn-primary" (click)="bookTour()">
+        {{ (content$ | async)?.buttons?.bookTour || 'Schedule a Visit' }}
+      </button>
+    </div>
   </div>
 </div>

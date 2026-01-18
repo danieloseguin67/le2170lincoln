@@ -1,9 +1,52 @@
-<div class="page-container">
-  <div class="container">
-    <h1>{{ (content$ | async)?.nav?.unfurnished || 'Unfurnished Suites' }}</h1>
-    <p>Unfurnished apartments for those who prefer their own furnishing.</p>
-    <button class="btn btn-primary" (click)="bookTour()">
-      {{ (content$ | async)?.buttons?.bookTour || 'Book a Tour' }}
-    </button>
+<div class="unfurnished-container">
+  <div class="unfurnished-hero">
+    <div class="container">
+      <h1>{{ (content$ | async)?.nav?.unfurnished || 'Unfurnished Suites' }}</h1>
+      <p>Your blank canvas awaits. Create the perfect home with unlimited customization freedom and premium built-in features.</p>
+    </div>
+  </div>
+  
+  <!-- Unfurnished Categories -->
+  <div class="unfurnished-content">
+    <div class="container">
+      <div class="category-section" *ngFor="let category of unfurnishedCategories">
+        <div class="category-header">
+          <h2>{{ category.title }}</h2>
+          <p class="category-description">{{ category.description }}</p>
+        </div>
+        
+        <div class="unfurnished-grid">
+          <div class="unfurnished-card" *ngFor="let feature of category.features">
+            <div class="unfurnished-image">
+              <img [src]="feature.image" [alt]="feature.title">
+              <div class="unfurnished-icon">{{ feature.icon }}</div>
+            </div>
+            
+            <div class="unfurnished-content">
+              <h3>{{ feature.title }}</h3>
+              <p class="unfurnished-description">{{ feature.description }}</p>
+              
+              <div class="unfurnished-advantages">
+                <h4>Advantages:</h4>
+                <ul>
+                  <li *ngFor="let advantage of feature.advantages">{{ advantage }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to Action -->
+  <div class="unfurnished-cta">
+    <div class="container">
+      <h2>Ready to Create Your Dream Home?</h2>
+      <p>Start with premium features and build your perfect living space</p>
+      <button class="btn btn-primary" (click)="bookTour()">
+        {{ (content$ | async)?.buttons?.bookTour || 'Explore Floor Plans' }}
+      </button>
+    </div>
   </div>
 </div>

@@ -1,9 +1,52 @@
-<div class="page-container">
-  <div class="container">
-    <h1>{{ (content$ | async)?.nav?.amenities || 'Amenities' }}</h1>
-    <p>World-class amenities await you at LE 2170 Lincoln.</p>
-    <button class="btn btn-primary" (click)="bookTour()">
-      {{ (content$ | async)?.buttons?.bookTour || 'Book a Tour' }}
-    </button>
+<div class="amenities-container">
+  <div class="amenities-hero">
+    <div class="container">
+      <h1>{{ (content$ | async)?.nav?.amenities || 'Amenities' }}</h1>
+      <p>Experience luxury living with world-class amenities designed for your comfort, convenience, and lifestyle.</p>
+    </div>
+  </div>
+  
+  <!-- Amenity Categories -->
+  <div class="amenities-content">
+    <div class="container">
+      <div class="category-section" *ngFor="let category of amenityCategories">
+        <div class="category-header">
+          <h2>{{ category.title }}</h2>
+          <p class="category-description">{{ category.description }}</p>
+        </div>
+        
+        <div class="amenities-grid">
+          <div class="amenity-card" *ngFor="let amenity of category.amenities">
+            <div class="amenity-image">
+              <img [src]="amenity.image" [alt]="amenity.title">
+              <div class="amenity-icon">{{ amenity.icon }}</div>
+            </div>
+            
+            <div class="amenity-content">
+              <h3>{{ amenity.title }}</h3>
+              <p class="amenity-description">{{ amenity.description }}</p>
+              
+              <div class="amenity-features">
+                <h4>Features:</h4>
+                <ul>
+                  <li *ngFor="let feature of amenity.features">{{ feature }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to Action -->
+  <div class="amenities-cta">
+    <div class="container">
+      <h2>Ready to Experience These Amenities?</h2>
+      <p>Schedule a tour to see our world-class facilities in person</p>
+      <button class="btn btn-primary" (click)="bookTour()">
+        {{ (content$ | async)?.buttons?.bookTour || 'Book a Tour' }}
+      </button>
+    </div>
   </div>
 </div>

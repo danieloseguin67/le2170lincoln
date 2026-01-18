@@ -1,9 +1,52 @@
-<div class="page-container">
-  <div class="container">
-    <h1>{{ (content$ | async)?.nav?.lifestyle || 'Lifestyle' }}</h1>
-    <p>Discover the Montreal lifestyle at LE 2170 Lincoln.</p>
-    <button class="btn btn-primary" (click)="bookTour()">
-      {{ (content$ | async)?.buttons?.bookTour || 'Book a Tour' }}
-    </button>
+<div class="lifestyle-container">
+  <div class="lifestyle-hero">
+    <div class="container">
+      <h1>{{ (content$ | async)?.nav?.lifestyle || 'Lifestyle' }}</h1>
+      <p>Experience the best of Montreal living at LE 2170 Lincoln. Where urban sophistication meets cultural richness in the heart of the city.</p>
+    </div>
+  </div>
+  
+  <!-- Lifestyle Categories -->
+  <div class="lifestyle-content">
+    <div class="container">
+      <div class="category-section" *ngFor="let category of lifestyleCategories">
+        <div class="category-header">
+          <h2>{{ category.title }}</h2>
+          <p class="category-description">{{ category.description }}</p>
+        </div>
+        
+        <div class="lifestyle-grid">
+          <div class="lifestyle-card" *ngFor="let feature of category.features">
+            <div class="lifestyle-image">
+              <img [src]="feature.image" [alt]="feature.title">
+              <div class="lifestyle-icon">{{ feature.icon }}</div>
+            </div>
+            
+            <div class="lifestyle-content">
+              <h3>{{ feature.title }}</h3>
+              <p class="lifestyle-description">{{ feature.description }}</p>
+              
+              <div class="lifestyle-highlights">
+                <h4>Highlights:</h4>
+                <ul>
+                  <li *ngFor="let highlight of feature.highlights">{{ highlight }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to Action -->
+  <div class="lifestyle-cta">
+    <div class="container">
+      <h2>Ready to Experience Montreal Living?</h2>
+      <p>Discover the perfect balance of urban convenience and cultural richness</p>
+      <button class="btn btn-primary" (click)="bookTour()">
+        {{ (content$ | async)?.buttons?.bookTour || 'Book a Tour' }}
+      </button>
+    </div>
   </div>
 </div>

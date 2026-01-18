@@ -1,9 +1,52 @@
-<div class="page-container">
-  <div class="container">
-    <h1>{{ (content$ | async)?.nav?.furnished || 'Furnished Suites' }}</h1>
-    <p>Fully furnished apartments ready for immediate occupancy.</p>
-    <button class="btn btn-primary" (click)="bookTour()">
-      {{ (content$ | async)?.buttons?.bookTour || 'Book a Tour' }}
-    </button>
+<div class="furnished-container">
+  <div class="furnished-hero">
+    <div class="container">
+      <h1>{{ (content$ | async)?.nav?.furnished || 'Furnished Suites' }}</h1>
+      <p>Move in today. Everything you need is already here. Premium furnished apartments with high-quality furniture, appliances, and amenities.</p>
+    </div>
+  </div>
+  
+  <!-- Furnished Categories -->
+  <div class="furnished-content">
+    <div class="container">
+      <div class="category-section" *ngFor="let category of furnishedCategories">
+        <div class="category-header">
+          <h2>{{ category.title }}</h2>
+          <p class="category-description">{{ category.description }}</p>
+        </div>
+        
+        <div class="furnished-grid">
+          <div class="furnished-card" *ngFor="let feature of category.features">
+            <div class="furnished-image">
+              <img [src]="feature.image" [alt]="feature.title">
+              <div class="furnished-icon">{{ feature.icon }}</div>
+            </div>
+            
+            <div class="furnished-content">
+              <h3>{{ feature.title }}</h3>
+              <p class="furnished-description">{{ feature.description }}</p>
+              
+              <div class="furnished-inclusions">
+                <h4>Included:</h4>
+                <ul>
+                  <li *ngFor="let inclusion of feature.inclusions">{{ inclusion }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to Action -->
+  <div class="furnished-cta">
+    <div class="container">
+      <h2>Ready to Move In Today?</h2>
+      <p>Skip the hassle of furniture shopping and start living immediately</p>
+      <button class="btn btn-primary" (click)="bookTour()">
+        {{ (content$ | async)?.buttons?.bookTour || 'View Available Units' }}
+      </button>
+    </div>
   </div>
 </div>
